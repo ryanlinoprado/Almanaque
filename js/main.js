@@ -30,10 +30,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //decidind quem fica com a barrinha vermelha
 
-const links = document.querySelectorAll(".nav-link");
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll(".nav-link");
 
-links.forEach(link => {
-    if (link.href === window.location.href) {
-        link.classList.add("active");
+    // Pega o nome da página atual (ex: "index.html")
+    let currentPage = window.location.pathname.split("/").pop();
+
+    // Caso esteja vazio (quando abre direto)
+    if (currentPage === "") {
+        currentPage = "index.html";
     }
+
+    links.forEach(link => {
+        const linkPage = link.getAttribute("href");
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+    });
 });
