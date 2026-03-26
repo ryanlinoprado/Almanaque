@@ -20,9 +20,14 @@
 }
 
 body {
-    background-color: var(--bg-primary);
-    background-image: url('../img/bg-pattern.svg');
-    background-size: 60px 60px;
+    background: 
+        linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 1)),
+        url('../img/fundo/indexfundo2.png');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
     color: var(--text-primary);
     font-family: var(--font-main);
     line-height: 1.6;
